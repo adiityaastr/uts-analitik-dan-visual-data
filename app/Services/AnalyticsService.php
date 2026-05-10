@@ -25,7 +25,7 @@ class AnalyticsService
     {
         $data = $this->repository->getDailySalesTrend();
         return [
-            'labels' => $data->pluck('tanggal')->toArray(),
+            'labels' => $data->pluck('tanggal')->map(fn($d) => $d->format('j M'))->toArray(),
             'values' => $data->pluck('total_penjualan')->toArray(),
             'transactions' => $data->pluck('jumlah_transaksi')->toArray(),
         ];

@@ -148,9 +148,21 @@
                 }
             },
             scales: {
-                x: { grid: { display: false }, ticks: { maxTicksLimit: 15 } },
+                x: {
+                    grid: { display: false },
+                    ticks: {
+                        maxTicksLimit: 12,
+                        maxRotation: 0,
+                        autoSkip: true,
+                        autoSkipPadding: 20,
+                        font: { size: 11 }
+                    }
+                },
                 y: {
-                    ticks: { callback: v => 'Rp ' + (v / 1000000).toFixed(0) + 'M' },
+                    ticks: {
+                        callback: v => 'Rp ' + (v / 1000000).toFixed(0) + 'M',
+                        font: { size: 11 }
+                    },
                     grid: { color: '#f1f5f9' }
                 }
             }
